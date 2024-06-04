@@ -1,0 +1,23 @@
+# Environment variables
+.env
+
+# Zip files
+*.zip
+
+# Image files
+*.png
+
+# Data files
+*.csv
+
+# Jupyter Notebook files
+*.ipynb
+
+# Virtual environment
+venv/
+
+# Directories
+DataEngineering_Cubix/
+data/
+json_handling/
+packages_for_lambda/ 
