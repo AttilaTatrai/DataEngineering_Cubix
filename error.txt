@@ -1,0 +1,35 @@
+Test Event Name
+test
+
+Response
+{
+  "errorMessage": "An error occurred (NoSuchKey) when calling the CopyObject operation: The specified key does not exist.",
+  "errorType": "NoSuchKey",
+  "requestId": "46d45317-0f77-42f5-aeb1-aa12a850b493",
+  "stackTrace": [
+    "  File \"/var/task/lambda_function.py\", line 296, in lambda_handler\n    upload_master_data_to_s3(bucket=bucket, path = company_master_folder, file_type = \"company\", dataframe = company_master_updated)\n",
+    "  File \"/var/task/lambda_function.py\", line 177, in upload_master_data_to_s3\n    s3.copy_object(\n",
+    "  File \"/var/lang/lib/python3.12/site-packages/botocore/client.py\", line 553, in _api_call\n    return self._make_api_call(operation_name, kwargs)\n",
+    "  File \"/var/lang/lib/python3.12/site-packages/botocore/client.py\", line 1009, in _make_api_call\n    raise error_class(parsed_response, operation_name)\n"
+  ]
+}
+
+Function Logs
+START RequestId: 46d45317-0f77-42f5-aeb1-aa12a850b493 Version: $LATEST
+taxi_trips is uploaded and moved.
+payment_type master has been updated
+LAMBDA_WARNING: Unhandled exception. The most likely cause is an issue in the function code. However, in rare cases, a Lambda runtime update can cause unexpected function behavior. For functions using managed runtimes, runtime updates can be triggered by a function change, or can be applied automatically. To determine if the runtime has been updated, check the runtime version in the INIT_START log entry. If this error correlates with a change in the runtime version, you may be able to mitigate this error by temporarily rolling back to the previous runtime version. For more information, see https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html
+[ERROR] NoSuchKey: An error occurred (NoSuchKey) when calling the CopyObject operation: The specified key does not exist.
+Traceback (most recent call last):
+  File "/var/task/lambda_function.py", line 296, in lambda_handler
+    upload_master_data_to_s3(bucket=bucket, path = company_master_folder, file_type = "company", dataframe = company_master_updated)
+  File "/var/task/lambda_function.py", line 177, in upload_master_data_to_s3
+    s3.copy_object(
+  File "/var/lang/lib/python3.12/site-packages/botocore/client.py", line 553, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/var/lang/lib/python3.12/site-packages/botocore/client.py", line 1009, in _make_api_call
+    raise error_class(parsed_response, operation_name)END RequestId: 46d45317-0f77-42f5-aeb1-aa12a850b493
+REPORT RequestId: 46d45317-0f77-42f5-aeb1-aa12a850b493	Duration: 2785.96 ms	Billed Duration: 2786 ms	Memory Size: 2048 MB	Max Memory Used: 263 MB	Init Duration: 2788.70 ms
+
+Request ID
+46d45317-0f77-42f5-aeb1-aa12a850b493
